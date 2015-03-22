@@ -1,0 +1,129 @@
+.main-slides{
+	margin: 0 auto;
+}
+
+.main-slides img{
+	margin: 0 auto;
+}
+
+.main-slides img { display: none }
+.main-slides img.first { display: block }
+
+.text-content{
+	overflow: hidden;
+}
+
+.cover-heading img{
+	padding-bottom: 10px;
+}
+
+h1{
+	position: relative;
+	font-size: 30px;
+	z-index: 3;
+	font-weight: bold;
+}
+
+.cover-heading span{
+	display: block;
+	clear: both;
+}
+
+.download-link{
+	display: block;
+	background: url('../img/google-play.png') no-repeat;
+	text-indent: -9999px;
+	width: 172px;
+	height: 60px;
+	margin: 20px auto;
+}
+
+.info-block{
+	text-align: left;
+	width: 100%;	
+	padding: 10px;
+	margin: 10px auto;
+	min-height: 104px;
+}
+
+.info-block p{
+	margin: 0;
+}
+
+.info-block div{
+	overflow: hidden;
+}
+
+.info-block img{
+	display: block;
+	margin: 0 auto;
+	width: 84px;
+	height: 84px;
+}
+
+.long-text{
+	text-align: left;
+}
+/*Cover template overrides*/
+.mastfoot{
+	position: relative;
+}
+
+.masthead{
+	background: #222;
+	z-index: 2;
+}
+
+.masthead .inner{
+	padding-top: 10px;
+	padding-bottom: 0;
+}
+
+nav{
+	z-index: 100;
+}
+
+.masthead, .mastfoot, .cover-container{
+	width: 100%;
+}
+
+@media (min-width: 360px){
+	.info-block{
+		background-color: #222;
+	}
+
+	.info-block img{
+		float: left;
+		margin-right: 10px;
+	}
+}
+
+@media (min-width: 768px){
+	h1{
+		margin: 15px 30% 0;
+	}
+
+	.main-content{
+		margin: 0 5%;
+	}
+
+	.long-text{
+		margin: 0 15%;
+	}
+
+	.main-slides{
+		margin: 15px auto;
+		float: left;
+		z-index: 1;
+		width: 35%;
+	}
+
+	.info-block{
+		width: 85%;
+	}
+
+	/*Desktop cover template overrides*/
+	.masthead .inner{
+		padding-top: 1px;
+	}
+}
