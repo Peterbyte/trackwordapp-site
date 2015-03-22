@@ -13,10 +13,6 @@
 	overflow: hidden;
 }
 
-.cover-heading img{
-	padding-bottom: 10px;
-}
-
 h1{
 	position: relative;
 	font-size: 30px;
@@ -27,6 +23,7 @@ h1{
 .cover-heading span{
 	display: block;
 	clear: both;
+	padding-top: 10px;
 }
 
 .download-link{
