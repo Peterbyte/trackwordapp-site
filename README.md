@@ -3,14 +3,12 @@ Content, build scripts and deployment process
 
 #Setup
 1. Install node
-
 2. Install grunt cli globally
-```
-npm install -g grunt-cli
-```
 
+	```
+	npm install -g grunt-cli
+	```
 3. Install dependencies
-
 	In project folder:
 
 	```
@@ -54,7 +52,7 @@ aws s3 sync target s3://trackwordapp.com --exclude "*" --include "*.css" --delet
 
 aws s3 sync target s3://trackwordapp.com --exclude "*" --include "*.js" --delete --content-type "application/javascript" --content-encoding gzip --cache-control max-age=7776000
 
-aws s3 sync target s3://trackwordapp.com --exclude "*" --include "*.ico" --delete --cache-control max-age=86400 --dryrun
+aws s3 sync target s3://trackwordapp.com --exclude "*" --include "*.ico" --delete --cache-control max-age=86400
 
 aws s3 sync target s3://trackwordapp.com --delete --cache-control max-age=7776000
 ```
