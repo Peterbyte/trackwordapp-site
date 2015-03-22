@@ -3,8 +3,9 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: {
-      deleteTarget: ["target"],
-      deleteGz: ["target/**/*.gz"]
+      deleteTarget: ['target'],
+      deleteTmpGz: ['target/**/*.gz'],
+      deleteCssTmp: ['target/styles']
     },
     copy: {
       createTarget: {
@@ -54,7 +55,7 @@ module.exports = function(grunt) {
       options: {
         keepSpecialComments: 0
       },
-      target: {
+      fromSrc: {
         files:{
           'target/styles/<%= pkg.name %>.min.css': ['styles/**/*.css']
         }
@@ -88,6 +89,25 @@ module.exports = function(grunt) {
         }]
       }
     },
+    uncss: {
+      dist: {
+        files: {
+          'target/styles/<%= pkg.name %>.min.css': [
+            'target/**/*.html',
+            '!target/redirect.html',
+            '!target/google*.html'
+          ]
+        }
+      }
+    },
+    inline: {
+      dist: {
+        options:{
+          cssmin: true
+        },
+        src: ['target/**/*.html']
+      }
+    },
     compress: {
       main:{
         options: {
@@ -99,12 +119,7 @@ module.exports = function(grunt) {
           return src + '.gz';
         }
       }
-    }//,
-    // inline: {
-    //   dist: {
-    //     src: ['target/**/*.html']
-    //   }
-    // }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -114,10 +129,26 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-hashres');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-compress');
-  // grunt.loadNpmTasks('grunt-inline');
+  grunt.loadNpmTasks('grunt-uncss');
+  grunt.loadNpmTasks('grunt-inline');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean:deleteTarget', 'copy:createTarget', 'uglify', 'cssmin', 'hashres', 'htmlmin']);
-  grunt.registerTask('prod', ['default', 'compress', 'copy:replaceWithGz', 'clean:deleteGz']);
+  grunt.registerTask('default', [
+    'clean:deleteTarget',
+    'copy:createTarget',
+    'uglify',
+    'cssmin:fromSrc'
+  ]);
 
+  grunt.registerTask('prod', [
+    'default',
+    'uncss',
+    'inline',
+    'clean:deleteCssTmp',
+    'hashres',
+    'htmlmin',
+    'compress',
+    'copy:replaceWithGz',
+    'clean:deleteTmpGz'
+  ]);
 };
