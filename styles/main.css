@@ -26,13 +26,23 @@ h1{
 	padding-top: 10px;
 }
 
-.download-link{
-	display: block;
-	background: url('../img/google-play.png') no-repeat;
+.download-links a{
+	display: inline-block;
 	text-indent: -9999px;
+	margin: 20px 10px;
+	vertical-align: middle;
+}
+
+.download-links .dl-google{
+	background: url('../img/google-play.png') no-repeat;
 	width: 172px;
 	height: 60px;
-	margin: 20px auto;
+}
+
+.download-links .dl-amazon{
+	background: url('../img/amazon-appstore.png') no-repeat;
+	width: 192px;
+	height: 66px;
 }
 
 .info-block{
