@@ -57,8 +57,19 @@ module.exports = function(grunt) {
       },
       fromSrc: {
         files:{
-          'target/styles/<%= pkg.name %>.min.css': ['styles/**/*.css']
+          'target/styles/<%= pkg.name %>.min.css': ['styles/bootstrap-*/**/*.css', 'styles/*.css']
         }
+      },
+      fromLib:{
+        files:{
+          'target/styles/<%= pkg.name %>.vendor.min.css': 'styles/owlcarousel-*/**/*.css'
+        }
+      }
+    },
+    concat:{
+      dist:{
+        src: ['target/styles/<%= pkg.name %>.min.css', 'target/styles/<%= pkg.name %>.vendor.min.css'],
+        dest: 'target/styles/<%= pkg.name %>.min.css'
       }
     },
     hashres: {
@@ -129,20 +140,32 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-hashres');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-inline');
 
   // Default task(s).
-  grunt.registerTask('default', [
+  grunt.registerTask('compile', [
     'clean:deleteTarget',
     'copy:createTarget',
-    'uglify',
-    'cssmin:fromSrc'
+    'uglify'
+  ]);
+
+  grunt.registerTask('default', [
+    'compile',
+    'cssmin:fromSrc',
+    'uncss',
+    'cssmin:fromLib',
+    'concat',
+    'inline'
   ]);
 
   grunt.registerTask('prod', [
-    'default',
+    'compile',
+    'cssmin:fromSrc',
     'uncss',
+    'cssmin:fromLib',
+    'concat',
     'inline',
     'clean:deleteCssTmp',
     'hashres',
