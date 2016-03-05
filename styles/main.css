@@ -1,7 +1,14 @@
 .main-slides{
-	width: 259px;
 	margin: 0 auto;
 }
+
+.main-slides img{
+	margin: 0 auto;
+}
+
+.main-slides img { display: none }
+.main-slides img.first { display: block }
+
 .text-content{
 	overflow: hidden;
 }
@@ -112,9 +119,10 @@ nav{
 	}
 
 	.main-slides{
-		z-index: 1;
+		margin: 15px auto;
 		float: left;
-		margin: 1% 5%;
+		z-index: 1;
+		width: 35%;
 	}
 
 	.info-block{

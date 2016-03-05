@@ -9,6 +9,12 @@
 
     <title>Trackword: The word grid game | Crafted Byte</title>
 
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template 
+    <link href="styles/cover.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">-->
     <link href="styles/trackword-site.min.css?__inline" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -68,31 +74,34 @@
             <div class="main-content">
               <p class="lead">The free word grid game for Android</p>
               <p>Challenge and expand your vocabulary by finding the 9 letter word,<br/>tracking from one tile in the grid to the next.</p>
-              <p class="download-links">
-                <a class="dl-google" target="_blank" href="https://play.google.com/store/apps/details?id=pgb.trackword" onclick="trackOutboundLink('https://play.google.com/store/apps/details?id=pgb.trackword'); return false;">Download Trackword from Google Play</a>
-                <a class="dl-amazon" target="_blank" href="http://www.amazon.com/gp/product/B012BNVK5W/ref=mas_pm_trackword_-_the_word_grid_game" onclick="trackOutboundLink('http://www.amazon.com/gp/product/B012BNVK5W/ref=mas_pm_trackword_-_the_word_grid_game'); return false;">Download Trackword from Amazon</a>
-              </p>
-              <div class="main-slides">
-                <div class="owl-carousel">
-                  <img src="img/slides/01-n4.png"/>
-                  <img src="img/slides/02-n4.png" />
-                  <img src="img/slides/03-n4.png" />
-                  <img data-src='img/slides/04-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/06-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/07-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/08-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/09-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/10-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/12-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/13-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/14-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/15-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/16-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/17-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/18-n4.png' class="lazyOwl" />
-                  <img data-src='img/slides/19-n4.png' class="lazyOwl" />
-                </div>
+                <p class="download-links">
+                  <a class="dl-google" target="_blank" href="https://play.google.com/store/apps/details?id=pgb.trackword" onclick="trackOutboundLink('https://play.google.com/store/apps/details?id=pgb.trackword'); return false;">Download Trackword from Google Play</a>
+                  <a class="dl-amazon" target="_blank" href="http://www.amazon.com/gp/product/B012BNVK5W/ref=mas_pm_trackword_-_the_word_grid_game" onclick="trackOutboundLink('http://www.amazon.com/gp/product/B012BNVK5W/ref=mas_pm_trackword_-_the_word_grid_game'); return false;">Download Trackword from Amazon</a>
+                </p>
+              <div height="454" class="main-slides cycle-slideshow" data-cycle-center-horz="true" data-cycle-progressive="#images">
+                <img src="img/slides/01-n4.png" class="first"/>
+                <img src="img/slides/02-n4.png" />
+                <img src="img/slides/03-n4.png" />
+                <script id="images" type="text/cycle">
+                [
+                  "<img src='img/slides/04-n4.png' />",
+                  "<img src='img/slides/06-n4.png' />",
+                  "<img src='img/slides/07-n4.png' />",
+                  "<img src='img/slides/08-n4.png' />",
+                  "<img src='img/slides/09-n4.png' />",
+                  "<img src='img/slides/10-n4.png' />",
+                  "<img src='img/slides/12-n4.png' />",
+                  "<img src='img/slides/13-n4.png' />",
+                  "<img src='img/slides/14-n4.png' />",
+                  "<img src='img/slides/15-n4.png' />",
+                  "<img src='img/slides/16-n4.png' />",
+                  "<img src='img/slides/17-n4.png' />",
+                  "<img src='img/slides/18-n4.png' />",
+                  "<img src='img/slides/19-n4.png' />"
+                ]
+                </script>
               </div>
+
               <div class="text-content">
                 <div class="info-block">
                   <img src="img/icons/casual.png" />
@@ -143,6 +152,13 @@
       </div>
     </div>
 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="bootstrap-3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="scripts/cycle2/jquery.cycle2.min.js"></script> -->
     <script src="scripts/trackword-site.min.js" defer></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug
